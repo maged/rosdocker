@@ -4,7 +4,7 @@ docker run -it \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --name "rostut_build" \
-    ros_vim &
+    rosdocker &
 
 xhost +local:`docker inspect --format='{{ .Config.Hostname }}' rostut_build`
 

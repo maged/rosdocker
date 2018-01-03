@@ -1,1 +1,1 @@
-docker build -t "ros_vim" .
+docker build -t "rosdocker" .
