@@ -8,11 +8,11 @@ RUN apt-get install -y ros-kinetic-ros-tutorials \
 RUN apt-get install -y gdb
 
 RUN mkdir -p /catkin_ws/src
-RUN echo "source /ros_entrypoint.sh" >> ~/.bashrc
+RUN echo "source /ros_entrypoint.sh" >> /etc/bash.bashrc
 RUN echo "set +e" >> ~/.bashrc
 
-RUN cd /catkin_ws/src
-RUN catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+COPY beginner_tutorials /catkin_ws/src/beginner_tutorials
+
 WORKDIR /catkin_ws
 
 CMD ["bash"]
